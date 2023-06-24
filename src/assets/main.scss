@@ -1,0 +1,162 @@
+@import url('./styles/plugin.scss');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app{
+  background-color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.w100{
+	width: 100%;
+}
+.container{
+  width: 100%;
+  .mainContent {
+    width: 100%;
+  }
+}
+
+
+
+.routerLink{
+ &:hover{
+  color: rgba(250, 194, 7, 1);
+ }
+}
+
+.flex{
+	display: flex;
+}
+.flex1{
+	flex: 1;
+}
+.w100{
+	width: 100%;
+}
+
+@media (min-width: 576px) {
+  .mainContent {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .mainContent {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .mainContent {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .mainContent {
+    max-width: 1140px;
+  }
+}
+
+
+$size-map: (
+	f20: -20px,
+	f15: -15px,
+	f10: -10px,
+	f5: -5px,
+	0: 0px,
+	3: 3px,
+	5: 5px,
+	8: 8px,
+	10: 10px,
+	12: 12px,
+	14: 14px,
+	15: 15px,
+	16: 16px,
+	20: 20px,
+	24: 24px,
+	25: 25px,
+	30: 30px,
+	36: 36px,
+	40: 40px,
+	50: 50px,
+	60: 60px,
+	90: 90px,
+	100: 100px,
+	124: 124px,
+	150: 150px,
+);
+
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100vw !important;
+	height: 100vh !important;
+}
+
+@each $name in map-keys($size-map) {
+	$value: map-get($size-map, $name);
+
+	.mt#{$name} {
+		margin-top: $value !important;
+	}
+
+	.mr#{$name} {
+		margin-right: $value;
+	}
+
+	.mb#{$name} {
+		margin-bottom: $value !important;
+	}
+
+	.ml#{$name} {
+		margin-left: $value;
+	}
+
+	.margin#{$name} {
+		margin: $value;
+	}
+
+	.margin-h-#{$name} {
+		margin-left: $value;
+		margin-right: $value;
+	}
+
+	.margin-v-#{$name} {
+		margin-top: $value;
+		margin-bottom: $value;
+	}
+
+	.pt#{$name} {
+		padding-top: $value !important;
+	}
+
+	.pr#{$name} {
+		padding-right: $value;
+	}
+
+	.pb#{$name} {
+		padding-bottom: $value !important;
+	}
+
+	.pl#{$name} {
+		padding-left: $value;
+	}
+
+	.padding#{$name} {
+		padding: $value;
+	}
+
+	.padding-h-#{$name} {
+		padding-left: $value !important;
+		padding-right: $value !important;
+	}
+
+	.padding-v-#{$name} {
+		padding-top: $value;
+		padding-bottom: $value;
+	}
+}
